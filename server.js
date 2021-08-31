@@ -16,7 +16,13 @@ var rollbar = new Rollbar({
 
 
 app.get('/',(req,res)=>{
+    try{
+        add(9,4,2)
+    }catch{
+        rollbar.error("Add function does not exist")
+    }
     res.sendFile(path.join(__dirname,'./client/index.html'))
+    
 })
 
 app.get('/css',(req,res)=>{
