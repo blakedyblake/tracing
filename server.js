@@ -33,6 +33,7 @@ app.get('/add',(req,res)=>{
         add(3,6,9)
     } catch(error){
         console.error(error)
+        rollbar.error(error)
     }
 })
 
