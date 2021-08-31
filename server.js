@@ -21,6 +21,17 @@ app.get('/js',(req,res)=>{
 app.use('/css',express.static(path.join(__dirname,'./client/index.css')))
 app.use('/js',express.static(path.join(__dirname, './client/client.js')))
 
+//Rollbar message
+var Rollbar = require('rollbar')
+var rollbar = new Rollbar({
+  accessToken: 'ae3a2ea3b8b54bee8b5d248594a7c759',
+  captureUncaught: true,
+  captureUnhandledRejections: true,
+})
+
+// record a generic message and send it to Rollbar
+rollbar.log('Hello world!')
+
 
 const PORT = process.env.PORT|| 4000
 app.listen(PORT,()=>{
