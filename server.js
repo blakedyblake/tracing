@@ -27,9 +27,11 @@ app.get('/',(req,res)=>{
 
 app.get('/css',(req,res)=>{
     res.sendFile(path.join(__dirname,'./client/index.css'))
+    rollbar.critical("THE CSS IS JUST TOO STYLING!!!!")
 })
 app.get('/js',(req,res)=>{
     res.sendFile(path.join(__dirname,'./client/client.js'))
+    rollbar.warning('There is a snake in my boot')
 })
 
 app.use('/css',express.static(path.join(__dirname,'./client/index.css')))
