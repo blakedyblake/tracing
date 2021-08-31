@@ -36,7 +36,9 @@ app.get('/js',(req,res)=>{
 
 app.use('/css',express.static(path.join(__dirname,'./client/index.css')))
 app.use('/js',express.static(path.join(__dirname, './client/client.js')))
-
+app.use('/newDiv',(req,res)=>{
+    rollbar.log("Added Div!")
+})
 //Rollbar message
 
 // app.get('/add',(req,res)=>{
