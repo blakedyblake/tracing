@@ -14,8 +14,13 @@ app.get('/',(req,res)=>{
 app.get('/css',(req,res)=>{
     res.sendFile(path.join(__dirname,'../client/index.css'))
 })
+app.get('/js',(req,res)=>{
+    res.sendFile(path.join(__dirname,'../client/client.js'))
+})
 
 app.use('/css',express.static(path.join(__dirname,'../client/index.css')))
+app.use('/js',express.static(path.join(__dirname, '../client/client.js')))
+
 
 const PORT = process.env.PORT|| 4000
 app.listen(PORT,()=>{
