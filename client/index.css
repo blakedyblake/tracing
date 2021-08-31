@@ -5,6 +5,6 @@ body{
 div{
     box-sizing: border-box;
     border-width: 3px;
-    border-style: dashed;
+    border-style: solid;
     border: white;
 }
