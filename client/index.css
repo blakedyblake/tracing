@@ -3,6 +3,7 @@ body{
     color:whitesmoke;
 }
 div{
+    box-sizing: border-box;
     border-width: 3px;
     border-style: dashed;
     border: white;
