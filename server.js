@@ -6,6 +6,14 @@ const app = express();
 app.use(express.json())
 app.use(cors())
 
+var Rollbar = require('rollbar')
+var rollbar = new Rollbar({
+  accessToken: 'ae3a2ea3b8b54bee8b5d248594a7c759',
+  captureUncaught: true,
+  captureUnhandledRejections: true,
+})
+app.use(rollbar.errorHandler())
+
 
 app.get('/',(req,res)=>{
     res.sendFile(path.join(__dirname,'./client/index.html'))
@@ -22,13 +30,7 @@ app.use('/css',express.static(path.join(__dirname,'./client/index.css')))
 app.use('/js',express.static(path.join(__dirname, './client/client.js')))
 
 //Rollbar message
-var Rollbar = require('rollbar')
-var rollbar = new Rollbar({
-  accessToken: 'ae3a2ea3b8b54bee8b5d248594a7c759',
-  captureUncaught: true,
-  captureUnhandledRejections: true,
-})
-app.use(rollbar.errorHandler())
+
 app.get('/add',(req,res)=>{
     try{
         add(3,6,9)
