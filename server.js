@@ -28,6 +28,7 @@ var rollbar = new Rollbar({
   captureUncaught: true,
   captureUnhandledRejections: true,
 })
+app.use(rollbar.errorHandler())
 app.get('/add',(req,res)=>{
     try{
         add(3,6,9)
