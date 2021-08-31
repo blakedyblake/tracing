@@ -6,6 +6,6 @@ document.querySelector('form').addEventListener('submit',(event)=>{
 
 
     newDoc.innerHTML = `<p>${input}</p>`
-    document.querySelector('body').append(newDoc);
+    document.querySelector('body').appendChild(newDoc);
 })
 
