@@ -8,18 +8,18 @@ app.use(cors())
 
 
 app.get('/',(req,res)=>{
-    res.sendFile(path.join(__dirname,'../client/index.html'))
+    res.sendFile(path.join(__dirname,'./client/index.html'))
 })
 
 app.get('/css',(req,res)=>{
-    res.sendFile(path.join(__dirname,'../client/index.css'))
+    res.sendFile(path.join(__dirname,'./client/index.css'))
 })
 app.get('/js',(req,res)=>{
-    res.sendFile(path.join(__dirname,'../client/client.js'))
+    res.sendFile(path.join(__dirname,'./client/client.js'))
 })
 
-app.use('/css',express.static(path.join(__dirname,'../client/index.css')))
-app.use('/js',express.static(path.join(__dirname, '../client/client.js')))
+app.use('/css',express.static(path.join(__dirname,'./client/index.css')))
+app.use('/js',express.static(path.join(__dirname, './client/client.js')))
 
 
 const PORT = process.env.PORT|| 4000
