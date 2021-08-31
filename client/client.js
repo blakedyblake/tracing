@@ -5,7 +5,7 @@ document.querySelector('form').addEventListener('submit',(event)=>{
     document.getElementById('in').value = '';
 
 
-    newDoc.innerHTML = `<div><p>${input}</p></div>`
+    newDoc.innerHTML = `<p>${input}</p>`
     document.querySelector('body').appendChild(newDoc);
 })
 
