@@ -28,6 +28,11 @@ var rollbar = new Rollbar({
   captureUncaught: true,
   captureUnhandledRejections: true,
 })
+try{
+    add(3,6,9)
+} catch(error){
+    console.error(error)
+}
 
 // record a generic message and send it to Rollbar
 rollbar.log('Hello world!')
