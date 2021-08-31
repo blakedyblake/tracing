@@ -31,14 +31,14 @@ app.use('/js',express.static(path.join(__dirname, './client/client.js')))
 
 //Rollbar message
 
-app.get('/add',(req,res)=>{
-    try{
-        add(3,6,9)
-    } catch(error){
-        console.error(error)
-        rollbar.error(error)
-    }
-})
+// app.get('/add',(req,res)=>{
+//     try{
+//         add(3,6,9)
+//     } catch(error){
+//         console.error(error)
+//         rollbar.error(error)
+//     }
+// })
 
 
 // record a generic message and send it to Rollbar
