@@ -12,7 +12,7 @@ var rollbar = new Rollbar({
   captureUncaught: true,
   captureUnhandledRejections: true,
 })
-app.use(rollbar.errorHandler())
+
 
 
 app.get('/',(req,res)=>{
@@ -44,6 +44,8 @@ app.get('/add',(req,res)=>{
 // record a generic message and send it to Rollbar
 rollbar.log('Hello world!')
 
+
+app.use(rollbar.errorHandler())
 
 const PORT = process.env.PORT|| 4000
 app.listen(PORT,()=>{
